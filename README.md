@@ -1,4 +1,4 @@
-# Home Assistant — Remote PC Reboot Button
+# Home Assistant - Remote Reboot Button
 
 [![Works with Home Assistant](https://img.shields.io/badge/works%20with-Home%20Assistant-41BDF5?style=for-the-badge&logo=home-assistant)](https://www.home-assistant.io)
 
