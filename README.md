@@ -133,6 +133,24 @@ The `confirmation` dialog prevents accidental taps.
 
 ---
 
+## If the PC's IP Changes
+
+If the PC's IP address changes, the button will stop working until you update it:
+
+1. Update the IP in every `shell_command` entry in `/config/configuration.yaml`.
+2. Restart Home Assistant (shell commands are only loaded at startup).
+3. If your shell command uses a `known_hosts` file instead of `StrictHostKeyChecking=no`, add the new host key, otherwise it fails with `Host key verification failed`:
+
+```bash
+ssh-keyscan -H NEW_IP >> /config/.ssh/known_hosts
+```
+
+Optionally remove the old entry: `ssh-keygen -R OLD_IP -f /config/.ssh/known_hosts`
+
+Also check anywhere else that references the old IP (scripts, automations, other shell commands).
+
+---
+
 ## Troubleshooting
 
 **`Permission denied (publickey,password)`**
